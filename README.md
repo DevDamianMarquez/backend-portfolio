@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Damian Marquez — Backend Engineering Portfolio
 
-## Getting Started
+Personal portfolio for junior backend roles. Next.js 16 (App Router) + TypeScript + Tailwind CSS v4, fully static.
+Deployed on Vercel at https://damian-backend-portfolio.vercel.app.
 
-First, run the development server:
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run lint       # ESLint (eslint-config-next)
+npm run typecheck  # tsc --noEmit
+npm run build      # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+| --- | --- |
+| Name, title, contact, skills, experience, languages | `src/config/site.ts` |
+| Case studies (Repuesthogar, ExamGen AI) | `src/data/projects.ts` |
+| Repuesthogar architecture diagram | `src/components/ArchitectureDiagram.tsx` |
+| Endpoint table, request pipeline, layer list | `src/components/ProjectParts.tsx` |
+| Colors, fonts, motion | `src/app/globals.css` |
+| SEO: metadata, OG image, favicon, robots, sitemap | `src/app/layout.tsx`, `src/app/opengraph-image.tsx`, `src/app/icon.svg`, `src/app/robots.ts`, `src/app/sitemap.ts` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content rules
 
-## Learn More
+- Only facts verified in code, on the live site, or confirmed by me. Unverified items go in `toConfirm` inside `src/data/projects.ts` (not rendered).
+- No skill percentages, invented metrics, testimonials or logos.
+- Links render only when they exist: the CV button appears when `public/cv.pdf` exists, the photo when `public/me.jpg` exists, LinkedIn when `site.linkedin` is set.
 
-To learn more about Next.js, take a look at the following resources:
+## TODO
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] CV at `public/cv.pdf` (source: replace the file when the CV changes).
+- [x] LinkedIn set in `src/config/site.ts`.
+- [x] Photo at `public/me.jpg` (About section).
+- [ ] Add ExamGen AI screenshots to `public/projects/examgen-ai/` and list them in `images`.
+- [ ] Confirm Repuesthogar endpoint names (private repo) before adding an API table to that case study.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (Vercel)
 
-## Deploy on Vercel
+This repo replaces the previous contents of `DevDamianMarquez/backend-portfolio`. Vercel picks it up as a Next.js project with no extra settings (`vercel.json` keeps build command and output). Push to `main` and Vercel redeploys.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Optional static export for other hosts: `STATIC_EXPORT=1 npm run build` writes plain files to `out/`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Fonts are self-hosted via `@fontsource`, so builds don't depend on Google Fonts.
