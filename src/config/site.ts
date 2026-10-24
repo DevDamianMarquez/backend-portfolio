@@ -54,7 +54,7 @@ export const site = {
 
   languages: [
     { name: "Spanish", level: "Native" },
-    { name: "English", level: "Reading & writing: intermediate · Listening & speaking: basic" },
+    { name: "English", level: "Written: professional working proficiency · Spoken: basic" },
   ],
 } as const;
 
