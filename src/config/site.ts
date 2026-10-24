@@ -41,8 +41,9 @@ export const site = {
     {
       role: "Freelance Developer",
       org: "Independent, clients in Uruguay",
+      period: "2026 – Present",
       points: [
-        "Built and deployed Repuesthogar, a product catalog with an admin panel for a retail store: FastAPI and PostgreSQL API, JWT-protected admin, Cloudinary image uploads, React frontend.",
+        "Built and deployed Repuesthogar (Sep–Oct 2026), a product catalog with an admin panel for a retail store: FastAPI and PostgreSQL API, JWT-protected admin, Cloudinary image uploads, React frontend.",
         "Delivered a landing website for a second local business.",
         "Owned each project end to end: requirements with non-technical owners, data modeling, APIs, deployment, DNS and handover.",
       ],

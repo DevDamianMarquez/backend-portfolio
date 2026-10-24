@@ -12,6 +12,7 @@ export type Project = {
   name: string;
   title: string; // full title used on the case study
   kind: "Client project" | "Personal project";
+  period?: string; // shown next to the kind, e.g. "Sep 2026 – Oct 2026"
   summary: string; // one or two sentences, shown on the home card
   links: { label: string; href: string }[];
   role: string;
@@ -34,6 +35,7 @@ export const projects: Project[] = [
     name: "Repuesthogar",
     title: "Repuesthogar — Product Catalog Platform",
     kind: "Client project",
+    period: "Sep 2026 – Oct 2026",
     summary:
       "A product catalog with its own admin panel for an appliance and spare-parts store in Pando, Uruguay. 758 products online; customers ask about any item on WhatsApp.",
     links: [{ label: "Live site", href: "https://repuesthogar.com" }],

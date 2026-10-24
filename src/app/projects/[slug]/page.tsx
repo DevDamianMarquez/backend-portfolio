@@ -54,7 +54,10 @@ export default async function ProjectPage({ params }: Props) {
       {/* Title */}
       <header className="grid gap-10 pb-12 pt-8 lg:grid-cols-[1.3fr_1fr]">
         <div className="min-w-0">
-          <p className="text-sm text-muted">{project.kind}</p>
+          <p className="text-sm text-muted">
+            {project.kind}
+            {project.period && <> · {project.period}</>}
+          </p>
           <h1 className="mt-2 font-display text-[clamp(2.25rem,5.5vw,3.75rem)] font-extrabold leading-[1.02] tracking-[-0.03em]">
             {project.title}
           </h1>

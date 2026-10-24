@@ -108,7 +108,10 @@ export default function Home() {
               <Reveal as="li" key={p.slug} index={i}>
                 <article className="lift grid gap-8 rounded-2xl border border-line bg-panel p-6 sm:p-8 lg:grid-cols-[1fr_1.15fr]">
                   <div className="min-w-0">
-                    <p className="text-sm text-muted">{p.kind}</p>
+                    <p className="text-sm text-muted">
+                      {p.kind}
+                      {p.period && <> · {p.period}</>}
+                    </p>
                     <h3 className="mt-1 font-display text-3xl font-bold tracking-tight">{p.name}</h3>
                     <p className="mt-4 max-w-[58ch] text-ink/85">{p.summary}</p>
                     <ul className="mt-5 space-y-2">
@@ -199,7 +202,8 @@ export default function Home() {
             {site.experience.map((e, i) => (
               <Reveal as="li" key={e.role} index={i} className="relative pb-10 last:pb-0">
                 <span aria-hidden className="absolute -left-[39px] top-1.5 size-3.5 rounded-full border-2 border-accent bg-bg" />
-                <h3 className="font-display text-xl font-semibold">{e.role}</h3>
+                <p className="font-mono text-sm text-accent">{e.period}</p>
+                <h3 className="mt-1 font-display text-xl font-semibold">{e.role}</h3>
                 <p className="text-muted">{e.org}</p>
                 <ul className="mt-4 max-w-[70ch] space-y-2">
                   {e.points.map((pt) => (
